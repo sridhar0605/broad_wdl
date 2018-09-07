@@ -3,10 +3,10 @@
 <https://software.broadinstitute.org/wdl/documentation/topic?name=wdl-tutorials>
 
 ## Dependencies 
- * Cromwell Jar workflow management
+ * Cromwell Jar workflow management  
  <https://github.com/broadinstitute/cromwell/releases/download/31/cromwell-31.jar>
 
- * WOMtool Jar validates workflow script
+ * WOMtool Jar validates workflow script  
  <https://github.com/broadinstitute/cromwell/releases/download/31/womtool-31.jar>
 
  * Java 8 

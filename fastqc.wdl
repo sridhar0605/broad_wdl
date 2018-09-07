@@ -8,6 +8,6 @@ task processfastqc {
 	String outputdir
 
 	command {
-	/gscmnt/gc2733/walter/sridnona/softwares/FastQC/FastQC/fastqc ${fq_file} -o ${outputdir}
+	/sridnona/softwares/FastQC/FastQC/fastqc ${fq_file} -o ${outputdir}
 	}
 }

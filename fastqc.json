@@ -1,0 +1,4 @@
+{
+  "Fastqc.processfastqc.fq_file": "/mouse_models/WT_R1.fq.gz",
+  "Fastqc.processfastqc.outputdir": "/mouse_models/"
+}

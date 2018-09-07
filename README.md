@@ -11,8 +11,8 @@
 
  * Java 8 
 
- * Docker with java8
-  sridnona/rnaseq_docker
+ * Docker with java8  
+  `sridnona/rnaseq_docker`
 
 
 

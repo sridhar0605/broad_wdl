@@ -5,18 +5,19 @@ workflow Fastqc {
 	String inputdir
 	
 
-	Array[String] inputData = read_tsv(Samplesheet)
+	Array[Array[String]] inputData = read_tsv(Samplesheet)
 
 
 	scatter (samples in inputData) {
-	call processfastqc{
-		input: inputDir = inputdir
-			   in_sample1 = samples + "_R1.fq.gz"
-			   in_sample2 = samples + "_R2.fq.gz"
-			   outdir = outputdir 
+		call processfastqc {
+			input: inputDir = inputdir,
+				   in_sample1 = samples + "_R1.fq.gz",
+				   in_sample2 = samples + "_R2.fq.gz",
+				   outdiir = outputdir 
 	}
 
-	}
+  }
+
 }
 
 task processfastqc {
@@ -26,14 +27,14 @@ task processfastqc {
 	String outdir
 
 	command {
-	fastqc ${in_sample1} ${in_sample1} -o ${outdir}
+	fastqc ${inputDir}/${in_sample1} ${inputDir}/${in_sample2} -o ${outdir}
 	}
 
 	runtime {
-	docker_image: "sridnona/rnaseq_docker"
+	docker_image: "sridnona/crispresso:v16"
     cpu: "1"
     memory_gb: "8"
     queue: "research-hpc"
-    resource: "select[mem>90000] rusage[mem=8000]"
+    resource: "select[mem>8000] rusage[mem=8000]"
 	}
 }

@@ -1,0 +1,11 @@
+digraph Fastqc {
+  compound=true;
+  
+  
+subgraph cluster_0 {
+  "call processfastqc"
+  "scatter (inputData)" [shape=plaintext]
+}
+      
+}
+

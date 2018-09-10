@@ -1,5 +1,9 @@
 # broad_wdl
 
+* Ideas borrowed from this repo 
+<https://github.com/seqfu/0005>
+
+#### Tutorials
 <https://software.broadinstitute.org/wdl/documentation/topic?name=wdl-tutorials>
 
 ## Dependencies 

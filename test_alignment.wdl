@@ -36,7 +36,7 @@ workflow hisat_align {
 		            outdir = outputdir
 		            
 
-    	}
+		}
 	}
 }
 

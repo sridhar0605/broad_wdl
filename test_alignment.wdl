@@ -4,18 +4,18 @@ workflow hisat_align {
 	String outputdir
 	String inputdir
 	String strand
-    String hisat_hg19_ref = '/gscmnt/gc2733/walter/sridnona/refs/hisat2_index/human.37.67'
-    String hisat_hg19_gtf = '/gscmnt/gc2733/walter/sridnona/refs/human37.67/Homo_sapiens/Ensembl/GRCh37/Annotation/Archives/archive-2015-07-17-14-31-42/Genes/genes.gtf'
-    String hisat_hg19_fa = '/gscmnt/gc2733/walter/sridnona/refs/human37.67/Homo_sapiens/Ensembl/GRCh37/Sequence/WholeGenomeFasta/genome.fa'
-    String hisat_mm9_ref = '/gscmnt/gc2733/walter/sridnona/refs/hisat2_index/ens_mm9_exss'
-    String hisat_mm9_gtf = '/gscmnt/gc2733/walter/sridnona/refs/ensembl/Mus_musculus.NCBIM37.67.gtf'
-    String hisat_mm9_fa = '/gscmnt/gc2733/walter/sridnona/refs/ensembl/Mus_musculus/Ensembl/NCBIM37/Sequence/WholeGenomeFasta/genome.fa'
-    
 
-    Array[Array[String]] inputData = read_tsv(Samplesheet)
+	String hisat_hg19_ref = '/gscmnt/gc2733/walter/sridnona/refs/hisat2_index/human.37.67'
+	String hisat_hg19_gtf = '/gscmnt/gc2733/walter/sridnona/refs/human37.67/Homo_sapiens/Ensembl/GRCh37/Annotation/Archives/archive-2015-07-17-14-31-42/Genes/genes.gtf'
+	String hisat_hg19_fa = '/gscmnt/gc2733/walter/sridnona/refs/human37.67/Homo_sapiens/Ensembl/GRCh37/Sequence/WholeGenomeFasta/genome.fa'
+	String hisat_mm9_ref = '/gscmnt/gc2733/walter/sridnona/refs/hisat2_index/ens_mm9_exss'
+	String hisat_mm9_gtf = '/gscmnt/gc2733/walter/sridnona/refs/ensembl/Mus_musculus.NCBIM37.67.gtf'
+	String hisat_mm9_fa = '/gscmnt/gc2733/walter/sridnona/refs/ensembl/Mus_musculus/Ensembl/NCBIM37/Sequence/WholeGenomeFasta/genome.fa'
+
+	Array[Array[String]] inputData = read_tsv(Samplesheet)
 
     
-    scatter (samples in inputData) {
+	scatter (samples in inputData) {
 
 		call processfastqc {
 				input: inputdir = inputdir,
